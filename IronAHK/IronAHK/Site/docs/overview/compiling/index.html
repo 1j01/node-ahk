@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Compiling</title>
+<link href="../../primary.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../main.js" defer="defer"></script>
+</head>
+<body>
+<h1>Compiling</h1>
+<div id="page">
+  <p>Scripts can be compiled to executable binary (.exe) files and distributed without exposing the original source code.</p>
+  <p>To compile via commad line use the following arguments:</p>
+  <pre class="code">ironahk /out example.exe script.ahk</pre>
+  <p>Special <a href="../../syntax/directive/#compiled">directives</a> like <a href="../../syntax/directive/#assemblytitle">#AssemblyTitle</a> and <a href="../../syntax/directive/#assemblyversion">#AssemblyVersion</a> can be used to set additional properties of the compiled executable file.</p>
+  <h3 id="performance">Performance</h3>
+  <p>Compiled binaries do not have the overhead of parsing syntax before execution and are therefore quicker to start up. Performance can be further improved with <a href="http://msdn.microsoft.com/en-us/library/6t9t5wcf.aspx">Ngen</a> on Windows or <a href="http://www.mono-project.com/AOT">Mono AOT</a>.</p>
+  <h3 id="security">Security</h3>
+  <p>While the resulting binary resembles nothing like the original source code, disassembly and reverse engineering can still be used to reveal any potentially sensitive strings or algorithms. This can be mitigated with obfuscation and encryption.</p>
+  <h3>Dependencies</h3>
+  <p>Binaries rely on <code>IronAHK.Rusty.dll</code> and <code>IronAHK.Scripting.dll</code> to be installed to the <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz.aspx">GAC</a>, on the systems <code>PATH</code> or present in the same working directory. <a href="http://research.microsoft.com/en-us/people/mbarnett/ilmerge.aspx">ILMerge</a> or <a href="http://www.go-mono.com/docs/index.aspx?tlink=32@man%3amkbundle%281%29">mkbundle</a> can be used to avoid dependence, a future version will have similar functionality built-in.</p>
+</div>
+</body>
+</html>

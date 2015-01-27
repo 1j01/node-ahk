@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Developing</title>
+<link href="../primary.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../main.js" defer="defer"></script>
+</head>
+<body>
+<h1>Developing</h1>
+<div id="page">
+  <h2 id="requirements">Requirements</h2>
+  <p id="windows">Windows:</p>
+  <ul>
+    <li><a href="http://www.microsoft.com/express/Downloads/#2010-Visual-CS">Visual C# 2010 Express</a> or greater</li>
+    <li><a href="http://sourceforge.net/projects/nunit/files/NUnit%20Version%202/V2.4.7/">NUnit 2.4.7</a></li>
+    <li><a href="http://code.google.com/p/msysgit/">msysgit</a></li>
+    <li><a href="http://www.7-zip.org/">7-zip</a></li>
+    <li><a href="http://www.codeproject.com/KB/install/WixSharpArticle.aspx">WixSharp</a></li>
+  </ul>
+  <p id="unix">Unix:</p>
+  <ul>
+    <li><a href="http://monodevelop.com/Download">MonoDevelop</a> with NUnit add-in</li>
+    <li><a href="http://git-scm.com/">Git</a></li>
+  </ul>
+  <p id="apt">Debian and Ubuntu users should install the following packages from <a href="http://badgerports.org/">badgerports</a>:</p>
+  <pre class="code">apt-get install monodevelop monodevelop-nunit git-core</pre>
+  <h2 id="source">Source</h2>
+  <p>The preferred way to obtain the source code is to clone the Git repository on <a href="http://github.com/polyethene/IronAHK">GitHub</a>.  </p>
+  <p>Changes are welcome in the form of forks or <a href="http://www.kernel.org/pub/software/scm/git/docs/git-format-patch.html">patches</a> to the <a href="http://github.com/polyethene/IronAHK/issues">issue tracker</a>. Smaller commits are generally preferred over larger ones. Any new development must pass all NUnit tests.</p>
+  <h2 id="building">Building</h2>
+  <p>A release build can be created by running <code>make</code> on all operating systems.</p>
+  <p>To run in Visual Studio, right click the <em>IronAHK</em> project and select <em>Set as StartUp Project</em>.</p>
+  <p>Debugging instructions can be found on the project <a href="http://github.com/polyethene/IronAHK/wiki/_pages">wiki</a>.</p>
+  <h2 id="related">Related</h2>
+  <ul>
+    <li><a href="status/">Status</a></li>
+  </ul>
+</div>
+</body>
+</html>

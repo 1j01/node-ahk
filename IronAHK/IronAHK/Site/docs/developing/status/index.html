@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Status</title>
+<link href="../../primary.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+#commands td {
+	text-align: center;
+}
+#commands *:first-child {
+	text-align: left;
+}
+.prc {
+	color: #666;
+	font-weight: normal;
+}
+-->
+</style>
+<script type="text/javascript" src="../../main.js" defer="defer"></script>
+<script type="text/javascript" defer="defer">
+<!--
+function statusreport()
+{
+	var cmd =
+[
+["Abs", true, true, true, true, ""],
+["ACos", true, true, true, true, ""],
+["Asc", true, true, true, true, ""],
+["ASin", true, true, true, true, ""],
+["ATan", true, true, true, true, ""],
+["AutoTrim", false, false, false, false, ""],
+["BlockInput", false, false, false, false, ""],
+["Break", false, false, false, false, ""],
+["Ceil", true, true, true, true, ""],
+["Chr", true, true, true, true, ""],
+["Click", false, false, false, false, ""],
+["ClipWait", false, false, false, false, ""],
+["Continue", false, false, false, false, ""],
+["Control", false, false, false, false, ""],
+["ControlClick", false, false, false, false, ""],
+["ControlFocus", false, false, false, false, ""],
+["ControlGet", false, false, false, false, ""],
+["ControlGetFocus", false, false, false, false, ""],
+["ControlGetPos", false, false, false, false, ""],
+["ControlGetText", false, false, false, false, ""],
+["ControlMove", false, false, false, false, ""],
+["ControlSend", false, false, false, false, ""],
+["ControlSendRaw", false, false, false, false, ""],
+["ControlSetText", false, false, false, false, ""],
+["CoordMode", false, false, false, false, ""],
+["Cos", true, true, true, true, ""],
+["Critical", false, false, false, false, ""],
+["DetectHiddenText", false, false, false, false, ""],
+["DetectHiddenWindows", false, false, false, false, ""],
+["DllCall", false, false, false, false, ""],
+["Drive", false, false, false, false, ""],
+["DriveGet", false, false, false, false, ""],
+["DriveSpaceFree", false, false, false, false, ""],
+["Edit", false, false, false, false, ""],
+["Else", false, false, false, false, ""],
+["EnvAdd", true, true, true, true, ""],
+["EnvDiv", false, false, false, false, ""],
+["EnvGet", false, false, false, false, ""],
+["EnvMult", false, false, false, false, ""],
+["EnvSet", false, false, false, false, ""],
+["EnvSub", true, true, null, null, "%o"],
+["EnvUpdate", false, false, false, false, ""],
+["Exit", false, false, false, false, ""],
+["ExitApp", false, false, false, false, ""],
+["Exp", true, true, true, true, ""],
+["FileAppend", false, false, false, false, ""],
+["FileCopy", false, false, false, false, ""],
+["FileCopyDir", false, false, false, false, ""],
+["FileCreateDir", false, false, false, false, ""],
+["FileCreateShortcut", false, false, false, false, ""],
+["FileDelete", false, false, false, false, ""],
+["FileExist", false, false, false, false, ""],
+["FileGetAttrib", false, false, false, false, ""],
+["FileGetShortcut", false, false, false, false, ""],
+["FileGetSize", false, false, false, false, ""],
+["FileGetTime", false, false, false, false, ""],
+["FileGetVersion", false, false, false, false, ""],
+["FileInstall", false, false, false, false, ""],
+["FileMove", false, false, false, false, ""],
+["FileMoveDir", false, false, false, false, ""],
+["FileRead", false, false, false, false, ""],
+["FileReadLine", false, false, false, false, ""],
+["FileRecycle", false, false, false, false, ""],
+["FileRecycleEmpty", false, false, false, false, ""],
+["FileRemoveDir", false, false, false, false, ""],
+["FileSelectFile", false, false, false, false, ""],
+["FileSelectFolder", false, false, false, false, ""],
+["FileSetAttrib", false, false, false, false, ""],
+["FileSetTime", false, false, false, false, ""],
+["Floor", true, true, true, true, ""],
+["FormatTime", false, false, false, false, ""],
+["GetKeyState", false, false, false, false, ""],
+["Gosub", false, false, false, false, ""],
+["Goto", false, false, false, false, ""],
+["GroupActivate", false, false, false, false, ""],
+["GroupAdd", false, false, false, false, ""],
+["GroupClose", false, false, false, false, ""],
+["GroupDeactivate", false, false, false, false, ""],
+["Gui", false, false, false, false, ""],
+["GuiControl", false, false, false, false, ""],
+["GuiControlGet", false, false, false, false, ""],
+["Hotkey", false, false, false, false, ""],
+["If", false, false, false, false, ""],
+["IfEqual", true, true, null, null, "%t conditional expression."],
+["IfExist", true, true, null, null, "%t conditional expression (FileExist)."],
+["IfGreater", true, true, null, null, "%t conditional expression."],
+["IfGreaterOrEqual", true, true, null, null, "%t conditional expression."],
+["IfInString", true, true, null, null, "%t conditional expression (InStr)."],
+["IfLess", true, true, null, null, "%t conditional expression."],
+["IfLessOrEqual", true, true, null, null, "%t conditional expression."],
+["IfMsgBox", false, false, false, false, ""],
+["IfNotEqual", true, true, null, null, "%t conditional expression."],
+["IfNotExist", true, true, null, null, "%t conditional expression (FileExist)."],
+["IfNotInString", true, true, null, null, "%t conditional expression (InStr)."],
+["IfWinActive", false, false, null, null, "%t conditional expression (WinActive)."],
+["IfWinExist", false, false, null, null, "%t conditional expression (WinExist)."],
+["IfWinNotActive", false, false, null, null, "%t conditional expression (WinActive)."],
+["IfWinNotExist", false, false, null, null, "%t conditional expression (WinExist)."],
+["IL_Add", false, false, false, false, ""],
+["IL_Create", false, false, false, false, ""],
+["IL_Destroy", false, false, false, false, ""],
+["ImageSearch", false, false, false, false, ""],
+["IniDelete", false, false, false, false, ""],
+["IniRead", false, false, false, false, ""],
+["IniWrite", false, false, false, false, ""],
+["Input", false, false, false, false, ""],
+["InputBox", false, false, false, false, ""],
+["InStr", false, false, false, false, ""],
+["IsFunc", false, false, false, false, ""],
+["IsLabel", false, false, false, false, ""],
+["KeyHistory", false, false, false, false, ""],
+["KeyWait", false, false, false, false, ""],
+["ListHotkeys", false, false, false, false, ""],
+["ListLines", false, false, false, false, ""],
+["ListVars", false, false, false, false, ""],
+["Ln", true, true, true, true, ""],
+["Log", true, true, true, true, ""],
+["Loop", false, false, false, false, ""],
+["LV_Add", false, false, false, false, ""],
+["LV_Delete", false, false, false, false, ""],
+["LV_DeleteCol", false, false, false, false, ""],
+["LV_GetCount", false, false, false, false, ""],
+["LV_GetNext", false, false, false, false, ""],
+["LV_GetText", false, false, false, false, ""],
+["LV_Insert", false, false, false, false, ""],
+["LV_InsertCol", false, false, false, false, ""],
+["LV_Modify", false, false, false, false, ""],
+["LV_ModifyCol", false, false, false, false, ""],
+["LV_SetImageList", false, false, false, false, ""],
+["Menu", false, false, false, false, ""],
+["Mod", true, true, true, true, ""],
+["MouseClick", false, false, false, false, ""],
+["MouseClickDrag", false, false, false, false, ""],
+["MouseGetPos", false, false, false, false, ""],
+["MouseMove", false, false, false, false, ""],
+["MsgBox", false, false, false, false, ""],
+["NumGet", false, false, false, false, ""],
+["NumPut", false, false, false, false, ""],
+["OnExit", false, false, false, false, ""],
+["OnMessage", false, false, false, false, ""],
+["OutputDebug", false, false, false, false, ""],
+["Pause", false, false, false, false, ""],
+["PixelGetColor", false, false, false, false, ""],
+["PixelSearch", false, false, false, false, ""],
+["PostMessage", false, false, false, false, ""],
+["Process", false, false, false, false, ""],
+["Progress", false, false, false, false, ""],
+["Random", true, true, true, true, ""],
+["RegDelete", false, false, false, false, ""],
+["RegExMatch", false, false, false, false, ""],
+["RegExReplace", false, false, false, false, ""],
+["RegisterCallback", false, false, false, false, ""],
+["RegRead", false, false, false, false, ""],
+["RegWrite", false, false, false, false, ""],
+["Reload", false, false, false, false, ""],
+["Repeat", true, true, true, null, "%t Loop"],
+["Return", false, false, false, false, ""],
+["Round", true, true, true, true, ""],
+["Run", false, false, false, false, ""],
+["RunAs", false, false, false, false, ""],
+["RunWait", false, false, false, false, ""],
+["SB_SetIcon", false, false, false, false, ""],
+["SB_SetParts", false, false, false, false, ""],
+["SB_SetText", false, false, false, false, ""],
+["Send", false, false, false, false, ""],
+["SendEvent", false, false, false, false, ""],
+["SendInput", false, false, false, false, ""],
+["SendMessage", false, false, false, false, ""],
+["SendMode", false, false, false, false, ""],
+["SendPlay", false, false, false, false, ""],
+["SendRaw", false, false, false, false, ""],
+["SetBatchLines", false, false, false, false, ""],
+["SetCapslockState", false, false, false, false, ""],
+["SetControlDelay", false, false, false, false, ""],
+["SetDefaultMouseSpeed", false, false, false, false, ""],
+["SetEnv", false, false, false, false, ""],
+["SetFormat", false, false, false, false, ""],
+["SetKeyDelay", false, false, false, false, ""],
+["SetMouseDelay", false, false, false, false, ""],
+["SetNumlockState", false, false, false, false, ""],
+["SetScrollLockState", false, false, false, false, ""],
+["SetStoreCapslockMode", false, false, false, false, ""],
+["SetTimer", false, false, false, false, ""],
+["SetTitleMatchMode", false, false, false, false, ""],
+["SetWinDelay", false, false, false, false, ""],
+["SetWorkingDir", false, false, false, false, ""],
+["Shutdown", false, false, false, false, ""],
+["Sin", true, true, true, true, ""],
+["Sleep", false, false, false, false, ""],
+["Sort", false, false, false, false, ""],
+["SoundBeep", false, false, false, false, ""],
+["SoundGet", false, false, false, false, ""],
+["SoundGetWaveVolume", false, false, false, false, ""],
+["SoundPlay", false, false, false, false, ""],
+["SoundSet", false, false, false, false, ""],
+["SoundSetWaveVolume", false, false, false, false, ""],
+["SplashImage", false, false, false, false, ""],
+["SplashTextOff", false, false, false, false, ""],
+["SplashTextOn", false, false, false, false, ""],
+["SplitPath", false, false, false, false, ""],
+["Sqrt", true, true, true, true, ""],
+["StatusBarGetText", false, false, false, false, ""],
+["StatusBarWait", false, false, false, false, ""],
+["StringCaseSense", false, false, false, false, ""],
+["StringGetPos", false, false, false, false, ""],
+["StringLeft", false, false, false, false, ""],
+["StringLen", false, false, false, false, ""],
+["StringLower", false, false, false, false, ""],
+["StringMid", false, false, false, false, ""],
+["StringReplace", false, false, false, false, ""],
+["StringRight", false, false, false, false, ""],
+["StringSplit", false, false, false, false, ""],
+["StringTrimLeft", false, false, false, false, ""],
+["StringTrimRight", false, false, false, false, ""],
+["StringUpper", false, false, false, false, ""],
+["StrLen", false, false, false, false, ""],
+["SubStr", false, false, false, false, ""],
+["Suspend", false, false, false, false, ""],
+["SysGet", false, false, false, false, ""],
+["Tan", true, true, true, true, ""],
+["Thread", false, false, false, false, ""],
+["ToolTip", false, false, false, false, ""],
+["Transform", false, false, false, false, ""],
+["TrayTip", false, false, false, false, ""],
+["TV_Add", false, false, false, false, ""],
+["TV_Delete", false, false, false, false, ""],
+["TV_Get", false, false, false, false, ""],
+["TV_GetChild", false, false, false, false, ""],
+["TV_GetCount", false, false, false, false, ""],
+["TV_GetNext", false, false, false, false, ""],
+["TV_GetParent", false, false, false, false, ""],
+["TV_GetPrev", false, false, false, false, ""],
+["TV_GetSelection", false, false, false, false, ""],
+["TV_GetText", false, false, false, false, ""],
+["TV_Modify", false, false, false, false, ""],
+["URLDownloadToFile", false, false, false, false, ""],
+["VarSetCapacity", false, false, false, false, ""],
+["While", false, false, false, false, ""],
+["WinActivate", false, false, false, false, ""],
+["WinActivateBottom", false, false, false, false, ""],
+["WinActive", false, false, false, false, ""],
+["WinClose", false, false, false, false, ""],
+["WinExist", false, false, false, false, ""],
+["WinGet", false, false, false, false, ""],
+["WinGetActiveStats", false, false, false, false, ""],
+["WinGetActiveTitle", false, false, false, false, ""],
+["WinGetClass", false, false, false, false, ""],
+["WinGetPos", false, false, false, false, ""],
+["WinGetText", false, false, false, false, ""],
+["WinGetTitle", false, false, false, false, ""],
+["WinHide", false, false, false, false, ""],
+["WinKill", false, false, false, false, ""],
+["WinMaximize", false, false, false, false, ""],
+["WinMenuSelectItem", false, false, false, false, ""],
+["WinMinimize", false, false, false, false, ""],
+["WinMinimizeAll", false, false, false, false, ""],
+["WinMinimizeAllUndo", false, false, false, false, ""],
+["WinMove", false, false, false, false, ""],
+["WinRestore", false, false, false, false, ""],
+["WinSet", false, false, false, false, ""],
+["WinSetTitle", false, false, false, false, ""],
+["WinShow", false, false, false, false, ""],
+["WinWait", false, false, false, false, ""],
+["WinWaitActive", false, false, false, false, ""],
+["WinWaitClose", false, false, false, false, ""],
+["WinWaitNotActive", false, false, false, false, ""]
+];
+	var e = document.getElementById("commands"), s = e.getElementsByTagName("tbody"), p = [0, 0, 0, 0], i, f = 5;
+	if (s != null && s.length == 1) { e = s[0]; }
+	for (i = 0; i < cmd.length; i++)
+	{
+		var td = document.createElement("td"), tr = document.createElement("tr"), a = document.createElement("a");
+		a.setAttribute("href", "../../commands/" + cmd[i][0].toLowerCase() + "/"); setText(a, cmd[i][0]);
+		td.appendChild(a); tr.appendChild(td);
+		for (var z = 1; z < f; z++)
+		{
+			tr.appendChild(statusicon(cmd[i][z]));
+			if (cmd[i][z]) { p[z - 1]++; }
+		}
+		if (cmd[i].length > f && cmd[i][f].length != 0)
+		{
+			td = document.createElement("td");
+			td.style.textAlign = "left";
+			var c = cmd[i][f].replace("%o", "Obsolete").replace("%t", "Translated to: ");
+			setText(td, c);
+			tr.appendChild(td);
+		}
+		e.appendChild(tr);
+	}
+	for (i = 0; i < p.length; i++) { setText(document.getElementById("p" + i), Math.round(p[i] / cmd.length * 100) + "%"); }
+}
+
+function setText(e, c)
+{
+	e.textContent = c;
+	e.innerText = c;
+}
+
+function statusicon(s)
+{
+	var td = document.createElement("td"), img = document.createElement("img");
+	img.width = img.height = 16; img.alt = (s == null ? "Partial" : s ? "Yes" : "No");
+	img.src = "../../images/" + (s == null ? "error" : s ? "tick" : "cross") + ".png";
+	td.appendChild(img);
+	return td;
+}
+
+if (window.addEventListener) { window.addEventListener("load", statusreport, false); }
+else if (window.attachEvent) { window.attachEvent("onload", statusreport); }
+//-->
+</script>
+</head>
+<body>
+<h1>Status</h1>
+<div id="page">
+  <h2 id="roadmap">Commands  </h2>
+  <table class="list" id="commands">
+    <tr>
+      <th>Command</th>
+      <th>Windows <span id="p0" class="prc"></span></th>
+      <th><acronym title="Linux and Mac">Unix</acronym> <span id="p1" class="prc"></span></th>
+      <th><acronym title="Documentation">Docs</acronym> <span id="p2" class="prc"></span></th>
+      <th><acronym title="NUnit Test Cases">Tests</acronym> <span id="p3" class="prc"></span></th>
+      <th>Notes</th>
+    </tr>
+  </table>
+  <noscript>
+  <p>JavaScript is required to display this page.</p>
+  </noscript>
+</div>
+</body>
+</html>

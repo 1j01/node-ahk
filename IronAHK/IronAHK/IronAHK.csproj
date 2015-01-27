@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{66E074FB-EBF4-4A58-8BE6-D4A2D688F5E3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IronAHK</RootNamespace>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Site\favicon.ico</ApplicationIcon>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <AssemblyName>IronAHK</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>IronAHK.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>IronAHK.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Rusty\Rusty.csproj">
+      <Project>{818030A8-5FFE-4CA1-8248-0940C72EA47A}</Project>
+      <Name>Rusty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scripting\Scripting.csproj">
+      <Project>{D7C6B1FD-2247-40A4-8DAB-199F3B8084E0}</Project>
+      <Name>Scripting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Tests\Code\isolated.ahk">
+      <Link>isolated.ahk</Link>
+    </None>
+    <None Include="Example.ahk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="IronAHK.snk" />
+    <None Include="Site\clean.php" />
+    <None Include="Site\docs\commands\.gitignore" />
+    <Content Include="..\.gitattributes">
+      <Link>.gitattributes</Link>
+    </Content>
+    <Content Include="..\.gitignore">
+      <Link>.gitignore</Link>
+    </Content>
+    <Content Include="..\readme.txt">
+      <Link>readme.txt</Link>
+    </Content>
+    <Content Include="Site\docs\robots.txt" />
+    <Content Include="Site\docs\syntax\command\index.html" />
+    <Content Include="Site\docs\syntax\directive\index.html" />
+    <Content Include="Site\docs\syntax\expression\index.html" />
+    <Content Include="Site\docs\syntax\flow\index.html" />
+    <Content Include="Site\docs\syntax\function\index.html" />
+    <Content Include="Site\docs\syntax\label\index.html" />
+    <Content Include="Site\docs\syntax\variable\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Debug.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\license.txt">
+      <Link>license.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Site\docs\commands\doc.xsl" />
+    <Content Include="Site\docs\developing\status\index.html" />
+    <Content Include="Site\docs\images\cross.png" />
+    <Content Include="Site\docs\images\delete.png" />
+    <Content Include="Site\docs\images\error.png" />
+    <Content Include="Site\docs\images\tick.png" />
+    <Content Include="Site\docs\main.js" />
+    <Content Include="Site\forum\index.html" />
+    <Content Include="Site\ga.js" />
+    <Content Include="Site\images\countdown.png" />
+    <Content Include="Site\images\editor.png" />
+    <Content Include="Site\images\helloworld.png" />
+    <Content Include="Site\images\helloworld_gtk.png" />
+    <Content Include="Site\images\icon.png" />
+    <Content Include="Site\images\src\_icon.png" />
+    <Content Include="Site\docs\copyright\index.html" />
+    <Content Include="Site\docs\autohotkey\index.html" />
+    <Content Include="Site\docs\changes\index.html" />
+    <Content Include="Site\docs\commands\index.html" />
+    <Content Include="Site\docs\commands\view.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Site\docs\developing\index.html" />
+    <Content Include="Site\docs\faq\index.html" />
+    <Content Include="Site\docs\index.html" />
+    <Content Include="Site\docs\overview\compiling\index.html" />
+    <Content Include="Site\docs\overview\gui\index.html" />
+    <Content Include="Site\docs\overview\hotkeys\index.html" />
+    <Content Include="Site\docs\overview\index.html" />
+    <Content Include="Site\docs\syntax\index.html" />
+    <Content Include="Site\docs\tutorial\index.html" />
+    <Content Include="Site\favicon.ico" />
+    <Content Include="Site\images\computer.png" />
+    <Content Include="Site\images\package.png" />
+    <Content Include="Site\images\page_white_csharp.png" />
+    <Content Include="Site\index.css" />
+    <Content Include="Site\index.html" />
+    <Content Include="Site\robots.txt" />
+    <Content Include="Site\docs\api.css" />
+    <Content Include="Site\docs\primary.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>
+      </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>
+      </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>
+      </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ProjectExtensions>
+    <VisualStudio />
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{818030A8-5FFE-4CA1-8248-0940C72EA47A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IronAHK.Rusty</RootNamespace>
+    <AssemblyName>IronAHK.Rusty</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Rusty.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <DocumentationFile>bin\Debug\IronAHK.Rusty.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;LEGACY WIN32</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <DocumentationFile>bin\Release\IronAHK.Rusty.xml</DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="Core\Helpers\Conversions.cs" />
+    <Compile Include="Common\Keyboard\HotkeyDefinition.cs" />
+    <Compile Include="Common\Keyboard\HotstringDefinition.cs" />
+    <Compile Include="Common\Keyboard\InputCommand.cs" />
+    <Compile Include="Common\Keyboard\KeyboardHook.cs" />
+    <Compile Include="Common\Keyboard\KeyParser.cs" />
+    <Compile Include="Common\Keyboard\KeyWaitCommand.cs" />
+    <Compile Include="Common\Mapper\DriveTypeMapper.cs" />
+    <Compile Include="Common\Mapper\MapperBase.cs" />
+    <Compile Include="Common\Mapper\MappingService.cs" />
+    <Compile Include="Core\Helpers\MouseController.cs" />
+    <Compile Include="Common\Drive.cs" />
+    <Compile Include="Common\GuiInvoker.cs" />
+    <Compile Include="Common\Window\SearchCriteria.cs" />
+    <Compile Include="Common\Window\WindowItemBase.cs" />
+    <Compile Include="Common\Window\WindowItemProvider.cs" />
+    <Compile Include="Common\Window\WindowManagerBase.cs" />
+    <Compile Include="Core\Helpers\Disk.cs" />
+    <Compile Include="Core\Helpers\Gui.cs" />
+    <Compile Include="Core\Helpers\Crypt.cs" />
+    <Compile Include="Core\Helpers\Options.cs" />
+    <Compile Include="Core\Helpers\Reflection.cs" />
+    <Compile Include="Core\Helpers\Initialisers.cs" />
+    <Compile Include="Core\Gui\Dialogs\ComplexDlgOptions.cs" />
+    <Compile Include="Core\Gui\Dialogs\IComplexDialoge.cs" />
+    <Compile Include="Core\Network.cs" />
+    <Compile Include="Core\Security.cs" />
+    <Compile Include="Core\Core.cs" />
+    <Compile Include="Core\Disk.cs" />
+    <Compile Include="Core\Gui\Dialogs\InputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Gui\Dialogs\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Gui\Dialogs\SplashDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Gui\HotkeyBox.cs" />
+    <Compile Include="Core\Gui\Menu.cs" />
+    <Compile Include="Core\Gui\Info.cs" />
+    <Compile Include="Core\Gui\Tips.cs" />
+    <Compile Include="Core\Gui\Dialogs.cs" />
+    <Compile Include="Core\PInvoke.cs" />
+    <Compile Include="Core\Environment.cs" />
+    <Compile Include="Core\Flow.cs" />
+    <Compile Include="Core\Helpers\Misc.cs" />
+    <Compile Include="Core\Gui\Gui.cs" />
+    <Compile Include="Core\Gui\ImageList.cs" />
+    <Compile Include="Core\Gui\ListView.cs" />
+    <Compile Include="Core\Gui\StatusBar.cs" />
+    <Compile Include="Core\Gui\TreeView.cs" />
+    <Compile Include="Core\Ini.cs" />
+    <Compile Include="Core\Json.cs" />
+    <Compile Include="Core\Keyboard.cs" />
+    <Compile Include="Core\Helpers\Keywords.cs" />
+    <Compile Include="Core\Loop.cs" />
+    <Compile Include="Core\Math.cs" />
+    <Compile Include="Core\Screen.cs" />
+    <Compile Include="Core\Mouse.cs" />
+    <Compile Include="Core\Process.cs" />
+    <Compile Include="Core\Helpers\Properties.cs" />
+    <Compile Include="Core\Registry.cs" />
+    <Compile Include="Core\Sound.cs" />
+    <Compile Include="Core\Accessors.cs" />
+    <Compile Include="Core\String.cs" />
+    <Compile Include="Common\Window\WindowProvider.cs" />
+    <Compile Include="Core\Window.cs" />
+    <Compile Include="Common\CRC32.cs" />
+    <Compile Include="Common\ImageSearcher\CoordProvider.cs" />
+    <Compile Include="Common\ImageSearcher\ImageFinder.cs" />
+    <Compile Include="Common\SimpleJson\SimpleJSON.cs" />
+    <Compile Include="Linux\Drive.cs" />
+    <Compile Include="Linux\WindowItem.cs" />
+    <Compile Include="Linux\X11\XAtom.cs" />
+    <Compile Include="Linux\X11\ChangeWindowFlags.cs" />
+    <Compile Include="Linux\X11\CursorFontShape.cs" />
+    <Compile Include="Linux\X11\Events\ExposeEvents.cs" />
+    <Compile Include="Linux\X11\Events\XCirculateEvent.cs" />
+    <Compile Include="Linux\X11\Events\XClientMessageEvent.cs" />
+    <Compile Include="Linux\X11\Events\XColormapEvent.cs" />
+    <Compile Include="Linux\X11\Events\XConfigureEvent.cs" />
+    <Compile Include="Linux\X11\Events\XConfigureRequestEvent.cs" />
+    <Compile Include="Linux\X11\Events\XCreateWindowEvent.cs" />
+    <Compile Include="Linux\X11\Events\XCrossingEvent.cs" />
+    <Compile Include="Linux\X11\Events\XDestroyWindowEvent.cs" />
+    <Compile Include="Linux\X11\Events\XErrorEvent.cs" />
+    <Compile Include="Linux\X11\Events\XEventPad.cs" />
+    <Compile Include="Linux\X11\Events\XFocusChangeEvent.cs" />
+    <Compile Include="Linux\X11\Events\XGravityEvent.cs" />
+    <Compile Include="Linux\X11\Events\XKeyEvent.cs" />
+    <Compile Include="Linux\X11\Events\XKeymapEvent.cs" />
+    <Compile Include="Linux\X11\Events\XMapEvent.cs" />
+    <Compile Include="Linux\X11\Events\XMappingEvent.cs" />
+    <Compile Include="Linux\X11\Events\XMotionEvent.cs" />
+    <Compile Include="Linux\X11\Events\XPropertyEvent.cs" />
+    <Compile Include="Linux\X11\Events\XReparentEvent.cs" />
+    <Compile Include="Linux\X11\Events\XResizeRequestEvent.cs" />
+    <Compile Include="Linux\X11\Events\XSelectionEvent.cs" />
+    <Compile Include="Linux\X11\Events\XTimerNotifyEvent.cs" />
+    <Compile Include="Linux\X11\Events\XVisibilityEvent.cs" />
+    <Compile Include="Linux\X11\GrabMode.cs" />
+    <Compile Include="Linux\X11\Gravity.cs" />
+    <Compile Include="Linux\X11\MapState.cs" />
+    <Compile Include="Linux\X11\Motif.cs" />
+    <Compile Include="Linux\X11\Notify.cs" />
+    <Compile Include="Linux\X11\SetWindowValuemask.cs" />
+    <Compile Include="Linux\X11\StackMode.cs" />
+    <Compile Include="Linux\X11\Types\XWindowAttributes.cs" />
+    <Compile Include="Linux\X11\Types\XWindowClass.cs" />
+    <Compile Include="Linux\X11\XColor.cs" />
+    <Compile Include="Linux\X11\XEvent.cs" />
+    <Compile Include="Linux\X11\XKeys.cs" />
+    <Compile Include="Linux\X11\XKeySym.cs" />
+    <Compile Include="Linux\X11\Xlib.cs" />
+    <Compile Include="Linux\Proxies\XDisplay.cs" />
+    <Compile Include="Linux\Proxies\XWindow.cs" />
+    <Compile Include="Linux\Structs.cs" />
+    <Compile Include="Common\SimpleJson\Decode.cs" />
+    <Compile Include="Common\SimpleJson\Encode.cs" />
+    <Compile Include="Linux\WindowManager.cs" />
+    <Compile Include="Linux\X11\Events\EventMasks.cs" />
+    <Compile Include="Linux\X11\Events\XAnyEvent.cs" />
+    <Compile Include="Linux\X11\Events\XButtonEvent.cs" />
+    <Compile Include="Linux\X11\Events\XEventName.cs" />
+    <Compile Include="Linux\X11\Types\XTextProperty.cs" />
+    <Compile Include="Linux\X11\XModifierKeymap.cs" />
+    <Compile Include="Linux\X11\XRequest.cs" />
+    <Compile Include="Linux\X11\XScreen.cs" />
+    <Compile Include="Linux\X11\XWindowChanges.cs" />
+    <Compile Include="Common\Patterns\Singleton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\Drive.cs" />
+    <Compile Include="Windows\WindowManager.cs" />
+    <Compile Include="Windows\KeyboardHook.cs" />
+    <Compile Include="Windows\PInvoke.cs" />
+    <Compile Include="Windows\Input.cs" />
+    <Compile Include="Linux\KeyboardHook.cs" />
+    <Compile Include="Windows\WindowItem.cs" />
+    <Compile Include="Linux\XConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>
+      </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>
+      </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>
+      </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio />
+  </ProjectExtensions>
+  <ItemGroup>
+    <None Include="Rusty.snk" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>
