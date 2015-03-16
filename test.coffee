@@ -1,15 +1,13 @@
 
-edge = require 'edge'
+{
+	GetMousePosition
+	AddHotkey
+	SendInput
+	MouseClickDrag
+} =
+	require './main'
 
-F = (methodName)->
-	source = 'NodeAHK.cs'
-	references = ['IronAHK/Rusty/bin/Debug/IronAHK.Rusty.dll']
-	edge.func {source, methodName, references}
-		
-GetMousePosition = F 'GetMousePosition'
-AddHotkey = F 'AddHotkey'
-SendInput = F 'SendInput'
-MouseClickDrag = F 'MouseClickDrag'
+console.log "Hello..."
 
 do TestGetMousePosition = ->
 	setInterval ->
@@ -18,9 +16,6 @@ do TestGetMousePosition = ->
 				console.error err
 			else
 				console.log res
-				SendInput "(#{res.x}, #{res.y})\n"
-				# SendInput "#{res}\n"
-				#SendInput "{left}{up 2}{right}{down 2}hjkhjkhjkhjk"
 	, 100
 
 TestAddHotkey = ->
@@ -34,11 +29,12 @@ TestAddHotkey = ->
 	process.stdin.resume()
 
 TestMouseClickDrag = ->
-	Drag = (x1, y1, x2, y2)->
-		MouseClickDrag {button: "left", x1, y1, x2, y2}, (err, res)->
+	Drag = (x1, y1, x2, y2, {duration, button}={})->
+		button ?= "Left"
+		MouseClickDrag {button, x1, y1, x2, y2, duration}, (err, res)->
 			if err
 				console.error err
 			else
 				console.log res
-
-console.log "Hello..."
+	
+	Drag 500, 500, 600, 900, duration: 200

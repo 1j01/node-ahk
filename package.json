@@ -1,11 +1,12 @@
 {
   "name": "ahk",
-  "version": "0.0.0",
-  "description": "AutoHotKey in Node.js",
+  "version": "0.0.1",
+  "description": "AutoHotKey desktop automation",
   "keywords": [
     "AutoHotKey",
     "autohotkey",
     "ahk",
+    "autoit",
     "automation",
     "hotkeys",
     "shortcuts",
@@ -35,27 +36,15 @@
   "engines": {
     "node": ">=0.10.20"
   },
-  "main": "./lib/AutoHotKey",
-  "preferGlobal": false,
+  "main": "./lib/main",
   "dependencies": {
     "edge": "~0.9.3"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.3",
-    "nar": "^0.3.18",
-    "nexe": "^0.3.7",
-    "nw": "^0.12.0"
+    "coffee-script": "~1.6.3"
   },
   "scripts": {
     "start": "coffee test.coffee",
-    "compile": "nexe -i test.coffee -o test.exe.exe.xexe.xeexe.exe",
-    "create-nar": "nar create",
-    "create-nar-executable": "nar create --executable"
-  },
-  "directories": {
-    "example": "example-scripts",
-    "bin": "bin"
-  },
-  "private": true,
-  "gypfile": false
+    "prepublish": "coffee -c -o lib/ main.coffee"
+  }
 }

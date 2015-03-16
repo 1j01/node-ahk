@@ -20,8 +20,7 @@ public class Startup
 	
 	public async Task<object> MouseClickDrag(dynamic input)
 	{
-		//string button = input.button;
-		Core.MouseClickDrag(input.button, input.x1, input.y1, input.x2, input.y2);
+		Core.MouseClickDrag(input.button, input.x1, input.y1, input.x2, input.y2, input.duration);
 		return 0;
 	}
 	
