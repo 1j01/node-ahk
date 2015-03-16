@@ -48,6 +48,6 @@ static class Random
 	public static int GetRandomNumber() 
 	{
 		return 4; // chosen by fair dice roll.
-		          // guarunteed to be random.
+		          // guaranteed to be random.
 	}
 }

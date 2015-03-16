@@ -11,13 +11,16 @@ AddHotkey = F 'AddHotkey'
 SendInput = F 'SendInput'
 MouseClickDrag = F 'MouseClickDrag'
 
-TestGetMousePosition = ->
+do TestGetMousePosition = ->
 	setInterval ->
 		GetMousePosition '!!!', (err, res)->
-			throw err if err
-			console.log err, res
-			#SendInput "GetMousePosition returned #{res} (x: #{res.x}, y: #{res.y})\n"
-			#SendInput "{left}{up 2}{right}{down 2}hjkhjkhjkhjk"
+			if err
+				console.error err
+			else
+				console.log res
+				SendInput "(#{res.x}, #{res.y})\n"
+				# SendInput "#{res}\n"
+				#SendInput "{left}{up 2}{right}{down 2}hjkhjkhjkhjk"
 	, 100
 
 TestAddHotkey = ->
@@ -30,10 +33,12 @@ TestAddHotkey = ->
 	
 	process.stdin.resume()
 
-do TestMouseClickDrag = ->
+TestMouseClickDrag = ->
 	Drag = (x1, y1, x2, y2)->
 		MouseClickDrag {button: "left", x1, y1, x2, y2}, (err, res)->
-			throw err if err
-			console.log err, res
+			if err
+				console.error err
+			else
+				console.log res
 
 console.log "Hello..."

@@ -1,51 +1,61 @@
 {
-	"name": "ahk",
-	"version": "0.0.0",
-	"description": "AutoHotKey in Node.js",
-	"keywords": [
-		"AutoHotKey", "autohotkey", "ahk",
-		"automation", "hotkeys",
-		"shortcuts", "scripting", "sendkeys",
-		"keyboard", "mouse", "windows", "desktop"
-	],
-	
-	"author": {
-		"name": "Isaiah Odhner",
-		"url": "http://1j01.github.io/"
-	},
-	"license": "GPL-2.0+",
-	
-	"homepage": "http://github.com/1j01/node-ahk/",
-	"bugs": {
-		"url": "https://github.com/1j01/node-ahk/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/1j01/node-ahk.git"
-	},
-	
-	"os": ["win32"],
-	"engines": {
-		"node": ">=0.10.20"
-	},
-	
-	"main": "./lib/AutoHotKey",
-	"preferGlobal": false,
-	
-	"dependencies": {},
-	"devDependencies": {
-		"coffee-script": "~1.6.3"
-	},
-	"dependencies": {
-		"edge": "~0.9.3"
-	},
-	"scripts": {
-		"start": "coffee test.coffee"
-	},
-	"directories": {
-		"example": "example-scripts",
-		"bin": "bin"
-	},
-	"private": true,
-	"gypfile": false
+  "name": "ahk",
+  "version": "0.0.0",
+  "description": "AutoHotKey in Node.js",
+  "keywords": [
+    "AutoHotKey",
+    "autohotkey",
+    "ahk",
+    "automation",
+    "hotkeys",
+    "shortcuts",
+    "scripting",
+    "sendkeys",
+    "keyboard",
+    "mouse",
+    "windows",
+    "desktop"
+  ],
+  "author": {
+    "name": "Isaiah Odhner",
+    "url": "http://1j01.github.io/"
+  },
+  "license": "GPL-2.0+",
+  "homepage": "http://github.com/1j01/node-ahk/",
+  "bugs": {
+    "url": "https://github.com/1j01/node-ahk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1j01/node-ahk.git"
+  },
+  "os": [
+    "win32"
+  ],
+  "engines": {
+    "node": ">=0.10.20"
+  },
+  "main": "./lib/AutoHotKey",
+  "preferGlobal": false,
+  "dependencies": {
+    "edge": "~0.9.3"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "nar": "^0.3.18",
+    "nexe": "^0.3.7",
+    "nw": "^0.12.0"
+  },
+  "scripts": {
+    "start": "coffee test.coffee",
+    "compile": "nexe -i test.coffee -o test.exe.exe.xexe.xeexe.exe",
+    "create-nar": "nar create",
+    "create-nar-executable": "nar create --executable"
+  },
+  "directories": {
+    "example": "example-scripts",
+    "bin": "bin"
+  },
+  "private": true,
+  "gypfile": false
 }
