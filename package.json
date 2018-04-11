@@ -38,10 +38,10 @@
   },
   "main": "./lib/main",
   "dependencies": {
-    "edge": "~0.9.3"
+    "edge-js": "^9.3.5"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.3"
+    "coffeescript": "^2.2.4"
   },
   "scripts": {
     "start": "coffee test.coffee",

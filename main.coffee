@@ -1,5 +1,5 @@
 
-edge = require 'edge'
+edge = require 'edge-js'
 
 source = 'NodeAHK.cs'
 references = ['IronAHK/Rusty/bin/Debug/IronAHK.Rusty.dll']
