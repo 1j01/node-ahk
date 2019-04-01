@@ -9,7 +9,7 @@
 
 console.log "Hello..."
 
-do TestGetMousePosition = ->
+TestGetMousePosition = ->
 	setInterval ->
 		GetMousePosition '!!!', (err, res)->
 			if err
@@ -24,11 +24,11 @@ TestAddHotkey = ->
 		useless_callback_callback null, 42
 	
 	AddHotkey {hotkey: "^S", callback}, (err, res)->
-		console.log '(AddHotkey callback)', err, res
+		console.log '(Edge.js callback for AddHotkey, i.e. registering the hotkey)', err, res
 	
 	process.stdin.resume()
 
-TestMouseClickDrag = ->
+do TestMouseClickDrag = ->
 	Drag = (x1, y1, x2, y2, {duration, button}={})->
 		button ?= "Left"
 		MouseClickDrag {button, x1, y1, x2, y2, duration}, (err, res)->

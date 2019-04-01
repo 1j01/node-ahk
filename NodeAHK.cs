@@ -29,9 +29,9 @@ public class Startup
 		Func<object, Task<object>> callback = input.callback;
 		string sequence = input.hotkey;
 		Core.GenericFunction proc = (object[] args) => callback(new {foo="bar"});
-		//var hkdef = Common.Keyboard.HotkeyDefinition.Parse(sequence);
-		//Core.InitKeyboardHook();
-		//Common.Keyboard.KeyboardHook.Add(hkdef);
+		// var hkdef = Common.Keyboard.HotkeyDefinition.Parse(sequence);
+		// Core.InitKeyboardHook();
+		// Common.Keyboard.KeyboardHook.Add(hkdef);
 		return 0;
 	}
 	

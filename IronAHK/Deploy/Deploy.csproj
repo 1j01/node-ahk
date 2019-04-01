@@ -104,6 +104,7 @@
     <None Include="..\Makefile">
       <Link>Makefile</Link>
     </None>
+    <None Include="app.config" />
     <None Include="Deploy.snk" />
     <None Include="setup.sh">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
