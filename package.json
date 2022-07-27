@@ -19,7 +19,8 @@
   ],
   "author": {
     "name": "Isaiah Odhner",
-    "url": "https://isaiahodhner.ml/"
+    "email": "isaiah.odhner@gmail.com",
+    "url": "https://isaiahodhner.io/"
   },
   "license": "GPL-2.0+",
   "homepage": "http://github.com/1j01/node-ahk/",
